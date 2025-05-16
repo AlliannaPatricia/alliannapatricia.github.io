@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+margin: 0;
+padding: 0;
+background: #ffeef3;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+overflow-x: hidden;
+position: relative;
+}
+
+/* Sakura Animation */
+body::before {
+content: '';
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-image: url('https://i.imgur.com/e3kOfHf.png');
+background-repeat: repeat;
+background-size: 150px;
+opacity: 0.08;
+z-index: -1;
+}
+
+/* Header */
+header {
+text-align: center;
+padding: 60px 20px 30px;
+background: #ffcfe0;
+border-bottom: 4px solid #f8a9c4;
+box-shadow: 0 4px 6px rgba(248, 169, 196, 0.3);
+}
+
+header h1 {
+color: #d6336c;
+font-size: 3em;
+margin: 0;
+font-weight: 700;
+text-shadow: 1px 1px white;
+}
+
+header p {
+color: #a02c5a;
+font-size: 1.2em;
+margin-top: 10px;
+}
+
+/* Projects */
+.projects {
+padding: 40px 20px;
+}
+
+.projects h2 {
+color: #c7156b;
+text-align: center;
+font-size: 2.2em;
+margin-bottom: 30px;
+}
+
+.project {
+background: #fff0f6;
+margin: 20px auto;
+padding: 20px;
+max-width: 600px;
+border-left: 5px solid #ffa6c9;
+box-shadow: 0 2px 10px rgba(255, 182, 193, 0.3);
+border-radius: 8px;
+}
+
+.project h3 {
+color: #d6336c;
+margin-bottom: 10px;
+}
+
+.project p {
+color: #5a2340;
+}
+
+/* Canvas for trail */
+#trail {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 9999;
+pointer-events: none;
+}
