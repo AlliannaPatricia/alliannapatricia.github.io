@@ -2,57 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🌸 Lab Task Portfolio</title>
-  <!-- CSS stylesheet linked here -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Basic styling for task page */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffe6f0;
+      color: #9c3d70;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(255, 192, 203, 0.3);
+      box-shadow: 0 0 15px #f8bbd0;
+      border-bottom: 2px solid #f48fb1;
+      user-select: none;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 3px;
+      text-shadow: 0 0 8px #f48fb1;
+    }
+    .github-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      background: #f48fb1;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 30px;
+      box-shadow: 0 0 12px #f48fb1;
+      transition: background-color 0.3s ease;
+    }
+    .github-link:hover {
+      background: #d81b60;
+      box-shadow: 0 0 20px #d81b60;
+    }
+    /* Canvas full screen */
+    #sakuraCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
 </head>
 <body>
+
   <!-- Sakura Falling Background -->
   <canvas id="sakuraCanvas"></canvas>
 
-  <!-- Header -->
   <header>
     <h1 id="dynamic-title">🌸 Lab Task Portfolio 🌸</h1>
-    <p>Explore my Midterm and Finals Lab Tasks below</p>
+    <a id="github-btn" href="#" target="_blank" class="github-link">Open on GitHub</a>
   </header>
 
-  <!-- Project Section -->
-  <section class="projects">
-    <h2>🌸 My Projects</h2>
-
-    <!-- MIDTERM TASKS -->
-    <div class="project-group">
-      <h3>📘 Midterm Lab Tasks</h3>
-      <div class="task-buttons">
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Midterm%20Lab%20Task%201" class="btn" target="_blank" onclick="setTitle('Midterm Lab Task 1')">Midterm Lab Task 1</a>
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Midterm%20Lab%20Task%202" class="btn" target="_blank" onclick="setTitle('Midterm Lab Task 2')">Midterm Lab Task 2</a>
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Midterm%20Lab%20Task%203" class="btn" target="_blank" onclick="setTitle('Midterm Lab Task 3')">Midterm Lab Task 3</a>
-      </div>
-    </div>
-
-    <!-- FINALS TASKS -->
-    <div class="project-group">
-      <h3>📕 Finals Lab Tasks</h3>
-      <div class="task-buttons">
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20%20Task%201" class="btn" target="_blank" onclick="setTitle('Finals Lab Task 1')">Finals Lab Task 1</a>
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%202" class="btn" target="_blank" onclick="setTitle('Finals Lab Task 2')">Finals Lab Task 2</a>
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%203" class="btn" target="_blank" onclick="setTitle('Finals Lab Task 3')">Finals Lab Task 3</a>
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%204" class="btn" target="_blank" onclick="setTitle('Finals Lab Task 4')">Finals Lab Task 4</a>
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%205" class="btn" target="_blank" onclick="setTitle('Finals Lab Task 5')">Finals Lab Task 5</a>
-        <a href="https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%206" class="btn" target="_blank" onclick="setTitle('Finals Lab Task 6')">Finals Lab Task 6</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- JS for dynamic title -->
   <script>
-    function setTitle(title) {
-      document.getElementById("dynamic-title").innerText = `🌸 ${title} 🌸`;
+    // Mapping task codes to full titles and GitHub URLs
+    const taskData = {
+      MLT1: {
+        title: "Midterm Lab Task 1",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Midterm%20Lab%20Task%201"
+      },
+      MLT2: {
+        title: "Midterm Lab Task 2",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Midterm%20Lab%20Task%202"
+      },
+      MLT3: {
+        title: "Midterm Lab Task 3",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Midterm%20Lab%20Task%203"
+      },
+      FLT1: {
+        title: "Finals Lab Task 1",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20%20Task%201"
+      },
+      FLT2: {
+        title: "Finals Lab Task 2",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%202"
+      },
+      FLT3: {
+        title: "Finals Lab Task 3",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%203"
+      },
+      FLT4: {
+        title: "Finals Lab Task 4",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%204"
+      },
+      FLT5: {
+        title: "Finals Lab Task 5",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%205"
+      },
+      FLT6: {
+        title: "Finals Lab Task 6",
+        github: "https://github.com/AlliannaPatricia/EDM-Portfolio/tree/main/Finals%20Lab%20Task%206"
+      }
+    };
+
+    // Function to get query parameter by name
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
     }
+
+    function updatePage() {
+      const taskCode = getQueryParam('task');
+      const data = taskData[taskCode];
+      if (data) {
+        document.getElementById('dynamic-title').innerText = `🌸 ${data.title} 🌸`;
+        const githubBtn = document.getElementById('github-btn');
+        githubBtn.href = data.github;
+        githubBtn.innerText = `Open ${data.title} on GitHub`;
+      } else {
+        // Default fallback if no valid task found
+        document.getElementById('dynamic-title').innerText = "🌸 Lab Task Portfolio 🌸";
+        document.getElementById('github-btn').style.display = 'none';
+      }
+    }
+
+    updatePage();
   </script>
 
-  <!-- JS for sakura animation and mouse trail -->
   <script src="script.js"></script>
 </body>
 </html>
