@@ -2,63 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Allianna's Portfolio 🌸</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allianna Patricia's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Snake Trail Canvas -->
-  <canvas id="trail"></canvas>
+  <!-- Sakura Falling Background -->
+  <canvas id="sakuraCanvas"></canvas>
 
-  <!-- Header Section -->
+  <!-- Header -->
   <header>
-    <h1>Allianna Patricia David</h1>
-    <p>BS Information Systems Student | Aspiring Developer 💻</p>
+    <h1>🌸 Allianna Patricia's Portfolio 🌸</h1>
+    <p>Explore my Midterm and Finals Lab Tasks below</p>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <section class="projects">
-      <h2>🌸 My Projects</h2>
+  <!-- Project Section -->
+  <section class="projects">
+    <h2>🌸 My Projects</h2>
 
-      <!-- ✅ Lab Task 5 -->
-      <div class="project">
-        <h3>Project 1: Finals Lab Task 5</h3>
-        <p>This project documents SQL queries and database schema using Markdown. It focuses on inventory management with product and vendor data.</p>
-        <a href="https://github.com/alliannapatricia/finals-lab-task-5" target="_blank" class="btn">
-          📂 View README on GitHub
-        </a>
+    <!-- MIDTERM TASKS -->
+    <div class="project-group">
+      <h3>📘 Midterm Lab Tasks</h3>
+      <div class="task-buttons">
+        <a href="PUT_YOUR_MLT1_LINK_HERE" class="btn" target="_blank">Midterm Lab Task 1</a>
+        <a href="PUT_YOUR_MLT2_LINK_HERE" class="btn" target="_blank">Midterm Lab Task 2</a>
+        <a href="PUT_YOUR_MLT3_LINK_HERE" class="btn" target="_blank">Midterm Lab Task 3</a>
       </div>
+    </div>
 
-      <!-- Placeholder for another project -->
-      <div class="project">
-        <h3>Project 2: Entrepreneurship Website</h3>
-        <p>Description of this project goes here...</p>
+    <!-- FINALS TASKS -->
+    <div class="project-group">
+      <h3>📕 Finals Lab Tasks</h3>
+      <div class="task-buttons">
+        <a href="PUT_YOUR_FLT1_LINK_HERE" class="btn" target="_blank">Finals Lab Task 1</a>
+        <a href="PUT_YOUR_FLT2_LINK_HERE" class="btn" target="_blank">Finals Lab Task 2</a>
+        <a href="PUT_YOUR_FLT3_LINK_HERE" class="btn" target="_blank">Finals Lab Task 3</a>
+        <a href="PUT_YOUR_FLT4_LINK_HERE" class="btn" target="_blank">Finals Lab Task 4</a>
+        <a href="PUT_YOUR_FLT5_LINK_HERE" class="btn" target="_blank">Finals Lab Task 5</a>
+        <a href="PUT_YOUR_FLT6_LINK_HERE" class="btn" target="_blank">Finals Lab Task 6</a>
       </div>
+    </div>
+  </section>
 
-    </section>
-  </main>
-
-  <!-- JavaScript Files -->
   <script src="script.js"></script>
-
-  <!-- 🌸 Sakura Falling Petals Script -->
-  <script src="https://cdn.jsdelivr.net/gh/mikeu/sakura/sakura.min.js"></script>
-  <script>
-    const sakura = new Sakura('body', {
-      colors: [
-        {
-          gradientColorStart: "rgba(255, 183, 197, 0.9)",
-          gradientColorEnd: "rgba(255, 140, 170, 0.9)",
-          gradientColorDegree: 120
-        }
-      ],
-      speed: 1.5,
-      delay: 300,
-      maxSize: 15,
-      minSize: 8,
-      fallSpeed: 0.8
-    });
-  </script>
 </body>
 </html>
