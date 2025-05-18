@@ -1,27 +1,107 @@
-/* General Styles */
-body {
-margin: 0;
-padding: 0;
-background: #ffeef3;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-overflow-x: hidden;
-position: relative;
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff0f6; /* soft light pink background */
+  color: #d6336c; /* deep pink text */
+  overflow-x: hidden;
 }
 
-/* Sakura Animation */
-body::before {
-content: '';
-position: fixed;
-top: 0;
-left: 0;
-height: 100%;
-width: 100%;
-background-image: url('https://i.imgur.com/e3kOfHf.png');
-background-repeat: repeat;
-background-size: 150px;
-opacity: 0.08;
-z-index: -1;
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(255, 182, 193, 0.3); /* translucent pink */
+  box-shadow: 0 4px 6px rgba(214, 51, 108, 0.3);
 }
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.2rem;
+  font-weight: 900;
+  color: #b11248;
+  text-shadow: 1px 1px 3px #f8bbd0;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #b11248;
+  font-weight: 600;
+}
+
+.projects {
+  max-width: 900px;
+  margin: 3rem auto 6rem;
+  padding: 0 1rem;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #b11248;
+  text-shadow: 1px 1px 2px #ff8fa3;
+}
+
+.project-group {
+  margin-bottom: 3rem;
+  background: rgba(255, 182, 193, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 12px rgba(214, 51, 108, 0.1);
+}
+
+.project-group h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #d6336c;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px #f8bbd0;
+}
+
+.task-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  background: #f8bbd0;
+  border: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 25px;
+  color: #9b074f;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(214, 51, 108, 0.3);
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:hover {
+  background: #d6336c;
+  color: #fff0f6;
+  box-shadow: 0 6px 15px rgba(214, 51, 108, 0.6);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn.disabled {
+  background: #f2b8c4;
+  color: #7a3753;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+#sakuraCanvas {
+  position: fixed;
+  top:
+
 
 /* Header */
 header {
